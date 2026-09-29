@@ -1,0 +1,9 @@
+Mikä on Suomen pääkaupunki?|Tampere|Helsinki|Turku|2|1
+Kuinka monta jalkaa on hämähäkillä?|Kuusi|Kahdeksan|Kymmenen|2|1
+Mikä on maapallon suurin valtameri?|Atlantti|Intian valtameri|Tyynimeri|3|1
+Mikä on veden kemiallinen merkki?|H2O|CO2|O2|1|2
+Mikä planeetta on tunnettu renkaistaan?|Mars|Venus|Saturnus|3|2
+Mikä on maailman korkein vuori?|K2|Kilimanjaro|Mount Everest|3|2
+Kuka maalasi Mona Lisan?|Vincent van Gogh|Leonardo da Vinci|Pablo Picasso|2|3
+Missä maassa sijaitsee Pisa-torni?|Ranska|Italia|Espanja|2|3
+Mikä on Suomen kansallislintu?|Laulujoutsen|Kuukkeli|Metso|1|3
