@@ -26,7 +26,7 @@ while True:
                 break
             else:
                 break
-
+            
     elif syote == "2":
         print("--OHJEET--")
         print("Vastaa kysymyksiin oikein, jokaisesta oikeasta vastauksesta saat 1000 pistettä!")
