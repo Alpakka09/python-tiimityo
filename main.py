@@ -10,12 +10,26 @@ while True:
     syote = input("1, 2, 3: ")
     
     if syote == "1":
+        print("Valitse vaikeustaso:")
+        print("[1] Helppo (500 pistettä)")
+        print("[2] Keskivaikea (750 pistettä)")
+        print("[3] Vaikea (1000 pistettä)")
+        taso = input("1, 2, 3: ")
+        if taso == "1":
+            piste_lisays = 500
+            print("Valitsit helpon tason, saat 500 pistettä!")
+        elif taso == "2":
+            piste_lisays = 750
+            print("Valitsit keskivaikean tason, saat 750 pistettä!")
+        else:
+            piste_lisays = 1000
+            print("Valitsit vaikean tason, saat 1000 pistettä!")
         while laskuri < 10000:
             print(kysymys)
             pelaajan_vastaus = input("Anna vastaus: ")
             if pelaajan_vastaus == oikea_vastaus:
-                print("Sait 1000 pistettä!")
-                laskuri += 1000
+                print(f"Sait {piste_lisays} pistettä!")
+                laskuri += piste_lisays
                 print(f"Pisteet: {laskuri}")
             else:
                 print("Väärin meni!")
