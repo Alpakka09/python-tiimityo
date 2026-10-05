@@ -5,6 +5,7 @@ oikea_vastaus2 = "2"
 kysymys_3 = "Mikä on maailman pisin joki? 1. Amazonas 2. Niili 3. Mississippi"
 oikea_vastaus3 = "3"
 laskuri = 0
+taso = 1
 print("--QUIZ GAME--")
 print("[1] Aloita peli")
 print("[2] Ohjeet")
@@ -24,6 +25,8 @@ if syote == "1":
     taso = 1
     laskuri = 0
     print("Peli alkaa!")
+else:
+    syote = input("Virheellinen valinta, valitse: 1, 2 tai 3: ")
 
 
 while laskuri < 30000:
@@ -32,10 +35,12 @@ while laskuri < 30000:
         oikea_vastaus = oikea_vastaus1
         pistelisays = 500
     elif taso == 2:
+        taso += 1
         nykyinen_kysymys = kysymys_2
         oikea_vastaus = oikea_vastaus2
         pistelisays = 2500
     else:
+        taso += 2
         nykyinen_kysymys = kysymys_3
         oikea_vastaus = oikea_vastaus3
         pistelisays = 5000
@@ -54,6 +59,4 @@ while laskuri < 30000:
     if laskuri >= 30000:
         print("Voitit pelin! Pisteet yhteensä", laskuri)
         
-else:
-    syote = input("Virheellinen valinta, valitse: 1, 2 tai 3: ")
 
