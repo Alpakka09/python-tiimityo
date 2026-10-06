@@ -1,9 +1,5 @@
-kysymys_1 = "mikä on veden kemiallinen merkki? 1. H2O 2. CO2 3. O2"
-oikea_vastaus1 = "1"
-kysymys_2 = "Mikä on Italian pääkaupunki? 1. Milano 2. Rooma 3. Venetsia"
-oikea_vastaus2 = "2"
-kysymys_3 = "Mikä on maailman pisin joki? 1. Amazonas 2. Niili 3. Mississippi"
-oikea_vastaus3 = "3"
+import logiikka
+kysymykset = logiikka.lue_kysymykset("kysymykset.txt")
 laskuri = 0
 taso = 1
 print("--QUIZ GAME--")
@@ -20,7 +16,8 @@ if syote == "2":
 if syote == "3":
     print("Kiitos pelistä! Hei hei!")
     exit()
- 
+
+
 if syote == "1":
     taso = 1
     laskuri = 0
@@ -29,34 +26,42 @@ else:
     syote = input("Virheellinen valinta, valitse: 1, 2 tai 3: ")
 
 
-while laskuri < 30000:
+while laskuri < 23000:
+    peli = logiikka.arvo_kysymys(kysymykset, taso)
     if taso == 1:
-        nykyinen_kysymys = kysymys_1
-        oikea_vastaus = oikea_vastaus1
         pistelisays = 500
     elif taso == 2:
-        taso += 1
-        nykyinen_kysymys = kysymys_2
-        oikea_vastaus = oikea_vastaus2
         pistelisays = 2500
     else:
-        taso += 2
-        nykyinen_kysymys = kysymys_3
-        oikea_vastaus = oikea_vastaus3
         pistelisays = 5000
 
-    print(nykyinen_kysymys)
+    if peli is None:
+        print("Kysymystä ei löytynyt.")
+        break
+    print(peli.teksti)
+
+    for numero, vaihtoehto in enumerate(peli.vaihtoehdot, 1):
+        print(f"{numero}. {vaihtoehto}")
     pelaajan_vastaus = input("Anna vastaus: ")
-    if pelaajan_vastaus == oikea_vastaus:
+
+    if pelaajan_vastaus not in ["1", "2", "3"]:
+        print("Valitse vaihtoehto 1, 2 tai 3!")
+        continue
+
+    if peli.tarkista_vastaus(pelaajan_vastaus):
         print(f"Sait {pistelisays} pistettä!")
         laskuri += pistelisays
         print(f"Pisteet: {laskuri}")
-        taso += 1
+        if taso < 3:
+            taso += 1
     else:
         print("Väärin meni!")
+        nimi = input("Anna nimesi: ")
+        logiikka.tallenna_tulos(nimi, laskuri)
         break
-                
+                    
     if laskuri >= 30000:
         print("Voitit pelin! Pisteet yhteensä", laskuri)
-        
+        nimi = input("Anna nimesi voittajien listalle: ")
+        logiikka.tallenna_tulos(nimi, laskuri)
 
